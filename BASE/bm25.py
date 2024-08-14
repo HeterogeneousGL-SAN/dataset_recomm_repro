@@ -28,7 +28,8 @@ parser.add_argument('-path',type=str,help='path to data')
 
 args = parser.parse_args()
 path = args.path
-
+if path is None:
+    path = f'./data/all/data/{args.dataset}'
 torch.manual_seed(args.seed)
 random.seed(args.seed)
 np.random.seed(args.seed)
@@ -59,7 +60,7 @@ def evaluation(rankings, true_labels,k = 10):
         correct = list(set(true_vals) & set(predicted))
         precision += len(correct) / k
         recall += len(correct) / len(true_vals)
-        ndcg += ndcg_at_k(predicted, true_vals, k)
+        ndcg += ndcg_at_k(true_vals, predicted, k)
     return precision/len(rankings), recall/len(rankings), ndcg/len(rankings)
 
 def get_corpus():
@@ -76,7 +77,7 @@ def get_corpus():
 
 def get_queries():
     dataset = args.dataset
-    pub_list = pd.read_csv(f'{path}/pubdataedges_test.csv')['source'].unique().tolist()
+    pub_list = pd.read_csv(f'{path}/pubdataedges_kcore_test.csv')['source'].unique().tolist()
     publications = pd.read_csv(f'{path}/publications_all.csv')
     publications = publications[publications['id'].isin(pub_list)]
     publications_ids = publications['id'].tolist()
@@ -105,7 +106,7 @@ def main():
     tokenized_corpus = [process(doc) for doc in datasets_corpus]
     bm25 = BM25Okapi(tokenized_corpus)
 
-    pd_edges = pd.read_csv(f'{path}/pubdataedges_test.csv')
+    pd_edges = pd.read_csv(f'{path}/pubdataedges_kcore_test.csv')
     pd_edges = pd_edges.groupby('source')['target'].apply(lambda x: ' '.join(x)).reset_index()
     edge_index_dict = {row['source']: row['target'].split() for i, row in pd_edges.iterrows()}
     edge_index_dict = {key: edge_index_dict[key] for key in sorted(edge_index_dict.keys())}

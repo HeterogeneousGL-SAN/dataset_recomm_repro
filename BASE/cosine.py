@@ -10,7 +10,16 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("-dataset", default='mes',choices=['mes','pubmed','pubmed_kcore'],
                     type=str)
-parser.add_argument("-path",type=str, help='path to data folder',default='./data/mes')
+parser.add_argument("-path",type=str, help='path to data folder')
+parser.add_argument("-path_embedding",type=str, help='path to data folder')
+args = parser.parse_args()
+path = args.path
+
+if args.path is None:
+    path = f'./data/all/data/{args.dataset}'
+    
+if args.path_embedding is None:
+    path_embedding = f'./data/all/{args.dataset}/cosine/'
 
 import time
 import shutil
@@ -20,10 +29,8 @@ import shutil
 
 def create_embeddings(dataset):
     print(dataset)
-    path_embedding = f'./data/{dataset}/'
 
     if os.path.exists(path_embedding):
-
         shutil.rmtree(path_embedding)
     os.makedirs(path_embedding)
 
@@ -32,7 +39,7 @@ def create_embeddings(dataset):
     datasets_all = pd.read_csv(f'{path}/datasets_all.csv', low_memory=False)
     pdedges_all = pd.read_csv(f'{path}/pubdataedges_all.csv', low_memory=False)
     datasets_all = datasets_all[datasets_all['id'].isin(pdedges_all['target'].unique().tolist())]
-    pd_edges = pd.read_csv(f'{path}/pubdataedges_test.csv', low_memory=False)
+    pd_edges = pd.read_csv(f'{path}/pubdataedges_kcore_test.csv', low_memory=False)
     publications_test = publications_test[publications_test['id'].isin(pd_edges['source'].unique().tolist())]
     publications_ids = publications_test['id'].tolist()
     print(f'total publications: {len(publications_ids)}')
@@ -76,10 +83,9 @@ def create_ranking(dataset):
 
         print('sorting')
         scores = sorted(scores, key = lambda x: x[1],reverse=True)
-        print(scores[:10])
         final_scores[publications_ids[i]] = [x[0] for x in scores][:100]
         print('\n')
-    f = open(f'./data/{dataset}/results.json','w')
+    f = open(f'{path_embedding}/results.json','w')
     print('saving')
     json.dump(final_scores,f)
 
@@ -87,7 +93,7 @@ def create_ranking(dataset):
 def evaluate(dataset,k=10):
     print(f'evaluation at K = {k}')
     precision, recall, ndcg = 0, 0, 0
-    f = open(f'./data/{dataset}/results.json','r', encoding='utf-8')
+    f = open(f'{path_embedding}/results.json','r', encoding='utf-8')
     print('restoring')
     data = json.load(f)
     # print(data)
@@ -96,16 +102,16 @@ def evaluate(dataset,k=10):
     #
     # # build ground truth
     #
-    if not os.path.exists(f'./data/{dataset}/groundtruth.json'):
+    if not os.path.exists(f'{path_embedding}/groundtruth.json'):
         pd_edges = pd.read_csv(f'{path}/pubdataedges_all.csv')
         concatenated_targets = pd_edges.groupby('source')['target'].agg(concatenate_targets).reset_index()
         ground_truth = {}
         for i,row in concatenated_targets.iterrows():
             ground_truth[row['source']] = row['target'].split()
-        f = open(f'./data/{dataset}/groundtruth.json','w')
+        f = open(f'{path_embedding}/groundtruth.json','w')
         json.dump(ground_truth,f)
     else:
-        g = open(f'./data/{dataset}/groundtruth.json','r')
+        g = open(f'{path_embedding}/groundtruth.json','r')
         ground_truth = json.load(g)
     #
     queries = len(list(data.keys()))
@@ -140,6 +146,7 @@ def evaluate(dataset,k=10):
 def main():
     args = parser.parse_args()
     dataset = args.dataset
+    create_ranking(dataset)
     cutoffs = [1,5,10]
 
     for k in cutoffs:
