@@ -28,9 +28,13 @@ parser.add_argument('--vgae',type=str,default='cit_net_vae',choices=['hvgae','ml
                                                               'sage_vae_enriched','sage_vae','sage_vae_bip'])
 parser.add_argument('--seed',default=42)
 parser.add_argument('--repro')
-parser.add_argument('--path',default=str)
+parser.add_argument('--grid_search',action='store_true')
+parser.add_argument('--path',type=str)
+parser.add_argument('--type',default='linear')
 
 args = parser.parse_args()
+
+reduced_list, enriched_list, standard_list = [],[],[]
 
 torch.manual_seed(args.seed)
 random.seed(args.seed)
@@ -69,7 +73,7 @@ def evaluation(rankings, edge_index,k = 10):
         correct = list(set(true_vals) & set(predicted))
         precision += len(correct) / k
         recall += len(correct) / len(true_vals)
-        ndcg += ndcg_at_k(predicted, true_vals, k)
+        ndcg += ndcg_at_k(true_vals, predicted, k)
     return precision/len(edge_index), recall/len(edge_index), ndcg/len(edge_index)
 
 
@@ -271,7 +275,9 @@ def run():
             json_res[f'precision_{str(k)}'] = str(precision)
             json_res[f'recall_{str(k)}'] = str(recall)
             print('\n\n')
-        f = open(f'./bip_net_{string}_standard.json', 'w')
+            if k == 5:
+                standard_list.append([precision, recall, ndcg, string])
+        f = open(f'./hvgae/results/bip_net_{string}_standard.json','w')
         json.dump(json_res, f, indent=4)
         # for k in [1,5,10]:
         #     precision,recall,ndcg = evaluation(sorted_recon,edge_index_dict,k=k)
@@ -423,7 +429,9 @@ def run_enriched():
             json_res[f'precision_{str(k)}'] = str(precision)
             json_res[f'recall_{str(k)}'] = str(recall)
             print('\n\n')
-        f = open(f'./bip_net_{string}_enriched.json', 'w')
+            if k == 5:
+                enriched_list.append([precision, recall, ndcg, string])
+        f = open(f'./hvgae/results/bip_net_{string}_standard.json','w')
         json.dump(json_res, f, indent=4)
 
 
@@ -568,7 +576,9 @@ def run_reduced():
             json_res[f'precision_{str(k)}'] = str(precision)
             json_res[f'recall_{str(k)}'] = str(recall)
             print('\n\n')
-        f = open(f'.bip_net_{string}_reduced.json', 'w')
+            if k == 5:
+                reduced_list.append([precision, recall, ndcg, string])
+        f = open(f'./hvgae/results/bip_net_{string}_reduced.json','w')
         json.dump(json_res, f, indent=4)
 
 
@@ -580,6 +590,13 @@ if __name__ == '__main__':
     decays = [1e-5,5e-5,1e-4,1e-6]
 
     for dataset in ['mes','pubmed_kcore','pubmed']:
+        args = parser.parse_args()
+        reduced_list, enriched_list, standard_list = [], [], []
+        print(reduced_list, enriched_list, standard_list)
+        args.dataset = dataset
+        if args.path is None:
+            args.path = f'./data/all/data/{dataset}/'
+            print(args.path)
         if dataset == 'pubmed':
             hiddens.append((256,128))
             hiddens.append((256, 64))
@@ -598,6 +615,16 @@ if __name__ == '__main__':
                 run()
                 run_enriched()
                 run_reduced()
+        g = open(f'./hvgae/results/all_results_bip_net_{dataset}.json', 'w')
+        max_tup_red = max(reduced_list,key=lambda x: x[1])
+        max_tup_enr = max(enriched_list,key=lambda x: x[1])
+        max_tup_standard = max(standard_list,key=lambda x: x[1])
+        g.write('standard: \n')
+        g.write(str(max_tup_standard))
+        g.write('\nenriched:\n')
+        g.write(str(max_tup_enr))
+        g.write('\nreduced:\n')
+        g.write(str(max_tup_red))
 
     # hidden1 = 128
     # hidden2 = 64

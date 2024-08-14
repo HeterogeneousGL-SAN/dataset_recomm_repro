@@ -117,8 +117,7 @@ class BipartiteDataset(InMemoryDataset):
 
     @property
     def processed_file_names(self):
-        if 'transductive' in self.root:
-            return ['graph_baseline_hvgae_10.pt']
+        return ['graph_baseline_hvgae_10.pt']
 
         # elif 'inductive_full' in self.root:
         #     return ['graph_baseline_hvgae.pt']
@@ -133,19 +132,8 @@ class BipartiteDataset(InMemoryDataset):
     def process(self):
         dataset = self.root.split('/')[1]
         print(f'DATASET: {dataset}')
-        if 'transductive' in self.root:
-            data_pre = self.create_transductive_graph()
-            data_list = [data_pre]
-        elif 'inductive_light' in self.root:
-            data_train = self.create_inductive_graph()
-            # data_vali = self.create_inductive_graph()
-            # data_test = self.create_inductive_graph()
-            data_list = [data_train]
-        elif 'inductive_full' in self.root:
-            data_train = self.create_inductive_graph()
-            # data_vali = self.create_inductive_graph()
-            # data_test = self.create_inductive_graph()
-            data_list = [data_train]
+        data_pre = self.create_transductive_graph()
+        data_list = [data_pre]
 
         print(self.root)
 

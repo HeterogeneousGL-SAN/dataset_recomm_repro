@@ -9,7 +9,6 @@ import numpy as np
 from loader import BipartiteDataset
 from torch_geometric import seed_everything
 
-seed_everything(10)
 import torch.nn.functional as F
 from torch_geometric.data import HeteroData
 from torch_geometric.loader import DataLoader, LinkNeighborLoader
@@ -27,25 +26,30 @@ from collections import Counter
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', type=str, default='mes',
+parser.add_argument('--dataset', type=str,
                     choices=['mes','pubmed_kcore','pubmed'],help="The selected dataset")
 parser.add_argument('--vgae',type=str,default='cit_net_vae',choices=['hvgae','mlp_vae','gcn_vae','cit_net_vae',
                                                               'sage_vae_enriched','sage_vae','sage_vae_bip'])
 parser.add_argument('--seed',default=42)
-parser.add_argument('--path',default=str)
+parser.add_argument('--grid_search',action='store_true')
+parser.add_argument('--path',type=str)
+parser.add_argument('--type',default='linear')
 
-args = parser.parse_args()
 
-# seed = 42
-# torch.manual_seed(seed)
-# random.seed(seed)
-# np.random.seed(seed)
-# g = torch.Generator()
-# g.manual_seed(seed)
-# random.seed(seed)
-# np.random.seed(seed)
-# torch.manual_seed(seed)
-# torch.cuda.manual_seed_all(seed)
+seed = 10
+torch.manual_seed(seed)
+random.seed(seed)
+np.random.seed(seed)
+g = torch.Generator()
+g.manual_seed(seed)
+random.seed(seed)
+np.random.seed(seed)
+torch.manual_seed(seed)
+torch.cuda.manual_seed_all(seed)
+seed_everything(seed)
+reduced_list, enriched_list, standard_list = [],[],[]
+
+
 def edge_index_split(edge_index,reduced=False):
     print('SPLITTING')
     edge_index_t = edge_index.t().tolist()
@@ -180,7 +184,7 @@ def evaluation(rankings, edge_index,k = 10):
         correct = list(set(true_vals) & set(predicted))
         precision += len(correct) / k
         recall += len(correct) / len(true_vals)
-        ndcg += ndcg_at_k(predicted, true_vals, k)
+        ndcg += ndcg_at_k(true_vals, predicted, k)
     return precision/len(edge_index), recall/len(edge_index), ndcg/len(edge_index)
 
 
@@ -193,6 +197,7 @@ def run():
         device = torch.device('cpu')
     # device = torch.device('cpu')
     print('TRAINING')
+    print(args.path)
 
     transform = RandomLinkSplit(
         num_val=0.1,
@@ -338,8 +343,10 @@ def run():
         json_res[f'precision_{str(k)}'] = str(precision)
         json_res[f'recall_{str(k)}'] = str(recall)
         print('\n\n')
+        if k == 5:
+            standard_list.append([precision, recall, ndcg, string])
     # f = open(f'baselines/hvgae/results/{dataset}/cit_net_{string}.json','w')
-    f = open(f'baselines/hvgae/results/{dataset}/standard/cit_net_{string}.json','w')
+    f = open(f'./hvgae/results/cit_net_{string}_standard.json', 'w')
     json.dump(json_res,f,indent=4)
 
 
@@ -459,8 +466,10 @@ def run_enriched():
         json_res[f'precision_{str(k)}'] = str(precision)
         json_res[f'recall_{str(k)}'] = str(recall)
         print('\n\n')
+        if k == 5:
+            enriched_list.append([precision, recall, ndcg, string])
     # f = open(f'baselines/hvgae/results/{dataset}/cit_net_{string}.json','w')
-    f = open(f'baselines/hvgae/results/{dataset}/enriched/cit_net_{string}.json','w')
+    f = open(f'./hvgae/results/cit_net_{string}_senriched.json', 'w')
     json.dump(json_res,f,indent=4)
 
 def run_reduced():
@@ -619,7 +628,9 @@ def run_reduced():
         json_res[f'recall_{str(k)}'] = str(recall)
         print('\n\n')
     # f = open(f'baselines/hvgae/results/{dataset}/cit_net_{string}.json','w')
-    f = open(f'baselines/hvgae/results/{dataset}/reduced/cit_net_{string}.json','w')
+        if k == 5:
+            reduced_list.append([precision, recall, ndcg, string])
+    f = open(f'./hvgae/results/cit_net_{string}_reduced.json', 'w')
     json.dump(json_res,f,indent=4)
 
 if __name__ == '__main__':
@@ -628,11 +639,19 @@ if __name__ == '__main__':
     hiddens = [(64,32),(128,64),(128,32)]
     decays = [1e-5,5e-5,1e-4]
     #
+
     for dataset in ['mes','pubmed_kcore','pubmed']:
+        reduced_list, enriched_list, standard_list = [], [], []
+        print(reduced_list, enriched_list, standard_list)
+        args = parser.parse_args()
+        if args.path is None:
+            args.path = f'./data/all/data/{dataset}/'
+            print(args.path)
+        args.dataset = dataset
         if dataset == 'pubmed':
             lrs = [0.001,0.005]
             hiddens = [(256, 128),(128,64),(128,128),(512,256) ,(256,256), (256, 64), (256, 128)]
-        for iteration in range(30):
+        for iteration in range(1):
             random.shuffle(hiddens)
             random.shuffle(lrs)
             random.shuffle(decays)
@@ -645,6 +664,19 @@ if __name__ == '__main__':
             run()
             run_enriched()
             run_reduced()
+        g = open(f'./hvgae/results/all_results_cit_net_{args.dataset}.json', 'w')
+        max_tup_red = max(reduced_list,key=lambda x: x[1])
+        max_tup_enr = max(enriched_list,key=lambda x: x[1])
+        max_tup_standard = max(standard_list,key=lambda x: x[1])
+        print(reduced_list)
+        print(enriched_list)
+        print(standard_list)
+        g.write('standard: \n')
+        g.write(str(max_tup_standard))
+        g.write('\nenriched:\n')
+        g.write(str(max_tup_enr))
+        g.write('\nreduced:\n')
+        g.write(str(max_tup_red))
 
 
 
