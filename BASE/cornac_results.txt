@@ -1,0 +1,946 @@
+dataset: pubmed_kcore
+bpr
+LR 0.1, ITER 100, LAMBDA_REG 0.1
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.1005 |      0.0320 |   0.1367 |    0.0546 |  18.2417
+
+bpr
+LR 0.1, ITER 100, LAMBDA_REG 0.0001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0794 |      0.0222 |   0.1074 |    0.0696 |  18.2108
+
+bpr
+LR 0.1, ITER 100, LAMBDA_REG 0.001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0820 |      0.0236 |   0.1126 |    0.0687 |  18.3767
+
+bpr
+LR 0.001, ITER 100, LAMBDA_REG 0.1
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0035 |      0.0013 |   0.0067 |    0.0691 |  18.2189
+
+bpr
+LR 0.001, ITER 100, LAMBDA_REG 0.0001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0035 |      0.0013 |   0.0067 |    0.0634 |  18.8563
+
+bpr
+LR 0.001, ITER 100, LAMBDA_REG 0.001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0035 |      0.0013 |   0.0067 |    0.0548 |  26.6161
+
+bpr
+LR 0.0001, ITER 100, LAMBDA_REG 0.1
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0011 |      0.0004 |   0.0022 |    0.0656 |  18.6537
+
+bpr
+LR 0.0001, ITER 100, LAMBDA_REG 0.0001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0011 |      0.0004 |   0.0022 |    0.0700 |  18.3677
+
+bpr
+LR 0.0001, ITER 100, LAMBDA_REG 0.001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0011 |      0.0004 |   0.0022 |    0.0595 |  18.4194
+
+bpr
+LR 0.1, ITER 200, LAMBDA_REG 0.1
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.1875 |      0.0578 |   0.2480 |    0.1188 |  18.4348
+
+bpr
+LR 0.1, ITER 200, LAMBDA_REG 0.0001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.1716 |      0.0533 |   0.2459 |    0.1205 |  18.4651
+
+bpr
+LR 0.1, ITER 200, LAMBDA_REG 0.001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.1782 |      0.0547 |   0.2509 |    0.1192 |  18.5054
+
+bpr
+LR 0.001, ITER 200, LAMBDA_REG 0.1
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0048 |      0.0022 |   0.0111 |    0.1243 |  18.5186
+
+bpr
+LR 0.001, ITER 200, LAMBDA_REG 0.0001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0049 |      0.0022 |   0.0111 |    0.1104 |  18.4039
+
+bpr
+LR 0.001, ITER 200, LAMBDA_REG 0.001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0049 |      0.0022 |   0.0111 |    0.1130 |  18.3575
+
+bpr
+LR 0.0001, ITER 200, LAMBDA_REG 0.1
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0020 |      0.0009 |   0.0044 |    0.1198 |  18.4266
+
+bpr
+LR 0.0001, ITER 200, LAMBDA_REG 0.0001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0020 |      0.0009 |   0.0044 |    0.1204 |  18.3969
+
+bpr
+LR 0.0001, ITER 200, LAMBDA_REG 0.001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0020 |      0.0009 |   0.0044 |    0.1154 |  18.3648
+
+bpr
+LR 0.1, ITER 300, LAMBDA_REG 0.1
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.2025 |      0.0587 |   0.2563 |    0.1691 |  18.3579
+
+bpr
+LR 0.1, ITER 300, LAMBDA_REG 0.0001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.2286 |      0.0680 |   0.3069 |    0.1701 |  18.3719
+
+bpr
+LR 0.1, ITER 300, LAMBDA_REG 0.001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.2398 |      0.0702 |   0.3154 |    0.1689 |  18.4902
+
+bpr
+LR 0.001, ITER 300, LAMBDA_REG 0.1
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0050 |      0.0018 |   0.0089 |    0.1701 |  18.2013
+
+bpr
+LR 0.001, ITER 300, LAMBDA_REG 0.0001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0050 |      0.0018 |   0.0089 |    0.1696 |  18.0468
+
+bpr
+LR 0.001, ITER 300, LAMBDA_REG 0.001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0050 |      0.0018 |   0.0089 |    0.1686 |  18.5777
+
+bpr
+LR 0.0001, ITER 300, LAMBDA_REG 0.1
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0039 |      0.0018 |   0.0089 |    0.1703 |  18.3428
+
+bpr
+LR 0.0001, ITER 300, LAMBDA_REG 0.0001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0039 |      0.0018 |   0.0089 |    0.1718 |  19.6931
+
+bpr
+LR 0.0001, ITER 300, LAMBDA_REG 0.001
+bpr: 
+    | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+--- + ------ + ----------- + -------- + --------- + --------
+BPR | 0.0039 |      0.0018 |   0.0089 |    0.1687 |  18.1930
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 1, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4304 |      0.1067 |   0.4559 |   33.0504 |   0.2620
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 1, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4327 |      0.1076 |   0.4615 |   17.1274 |   0.2661
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 1, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4304 |      0.1071 |   0.4578 |   24.3901 |   0.2696
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 1, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4272 |      0.1071 |   0.4556 |   24.7537 |   0.2610
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 2, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4297 |      0.1076 |   0.4604 |   21.5108 |   0.2966
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 2, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4322 |      0.1080 |   0.4622 |   22.7982 |   0.2626
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 2, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4365 |      0.1089 |   0.4681 |   18.4879 |   0.2621
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 2, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4372 |      0.1080 |   0.4630 |   24.3531 |   0.3084
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 3, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4374 |      0.1089 |   0.4670 |   16.9824 |   0.2990
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 3, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4332 |      0.1089 |   0.4670 |   20.7699 |   0.2628
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 3, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4320 |      0.1084 |   0.4659 |   25.2632 |   0.2632
+
+lightgcn
+LR 0.01, ITER 100, LAYERS 3, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4327 |      0.1084 |   0.4663 |   19.0255 |   0.2623
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 1, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4334 |      0.1084 |   0.4659 |   27.2152 |   0.2635
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 1, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4285 |      0.1080 |   0.4637 |   25.2110 |   0.2632
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 1, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4134 |      0.1071 |   0.4581 |   26.7672 |   0.4752
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 1, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.3726 |      0.1009 |   0.4281 |   30.2930 |   0.2963
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 2, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4360 |      0.1098 |   0.4689 |   29.8966 |   0.3131
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 2, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4376 |      0.1098 |   0.4689 |   28.9504 |   0.2644
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 2, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4348 |      0.1102 |   0.4722 |   24.6247 |   0.2630
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 2, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4220 |      0.1089 |   0.4656 |   24.4156 |   0.2629
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 3, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4307 |      0.1084 |   0.4663 |   25.7211 |   0.2608
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 3, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4331 |      0.1080 |   0.4641 |   25.4864 |   0.2641
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 3, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4253 |      0.1102 |   0.4711 |   25.0718 |   0.2613
+
+lightgcn
+LR 0.001, ITER 100, LAYERS 3, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4251 |      0.1089 |   0.4670 |   24.8555 |   0.2642
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 1, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.3828 |      0.1013 |   0.4289 |   25.8875 |   0.2667
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 1, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.3379 |      0.0893 |   0.3813 |   25.3900 |   0.2636
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 1, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.1615 |      0.0444 |   0.2063 |   24.7612 |   0.3060
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 1, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.0440 |      0.0124 |   0.0589 |   27.6045 |   0.2901
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 2, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4215 |      0.1089 |   0.4656 |   27.8376 |   0.2635
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 2, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4146 |      0.1053 |   0.4478 |   26.0334 |   0.2621
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 2, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.3771 |      0.0973 |   0.4106 |   24.8007 |   0.2632
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 2, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.2979 |      0.0769 |   0.3476 |   24.3283 |   0.2642
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 3, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4253 |      0.1098 |   0.4689 |   27.7003 |   0.2660
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 3, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4209 |      0.1062 |   0.4522 |   25.6303 |   0.2915
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 3, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.3991 |      0.0996 |   0.4270 |   24.8188 |   0.2632
+
+lightgcn
+LR 0.0001, ITER 100, LAYERS 3, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.3519 |      0.0902 |   0.3930 |   24.4304 |   0.2626
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 1, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4308 |      0.1071 |   0.4567 |   14.4390 |   0.2632
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 1, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4289 |      0.1067 |   0.4570 |   23.9677 |   0.2635
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 1, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4278 |      0.1067 |   0.4556 |   25.4053 |   0.2646
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 1, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4299 |      0.1080 |   0.4622 |   37.9453 |   0.2648
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 2, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4308 |      0.1080 |   0.4611 |   34.9408 |   0.2628
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 2, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4374 |      0.1098 |   0.4689 |   19.6529 |   0.2641
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 2, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4384 |      0.1098 |   0.4700 |   16.7109 |   0.2613
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 2, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4393 |      0.1111 |   0.4756 |   26.8622 |   0.2634
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 3, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4318 |      0.1084 |   0.4659 |   17.1651 |   0.2633
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 3, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4339 |      0.1084 |   0.4648 |   36.8931 |   0.2634
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 3, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4361 |      0.1084 |   0.4648 |   16.3982 |   0.2646
+
+lightgcn
+LR 0.01, ITER 500, LAYERS 3, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4321 |      0.1080 |   0.4637 |   21.9585 |   0.2625
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 1, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4313 |      0.1080 |   0.4611 |   28.3548 |   0.2625
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 1, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4346 |      0.1089 |   0.4656 |   28.4997 |   0.2621
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 1, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4318 |      0.1089 |   0.4644 |   40.0949 |   0.2614
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 1, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4198 |      0.1067 |   0.4544 |   55.2492 |   0.2683
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 2, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4351 |      0.1098 |   0.4715 |   20.8936 |   0.2638
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 2, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4338 |      0.1098 |   0.4689 |   27.4842 |   0.2636
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 2, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4380 |      0.1111 |   0.4756 |   52.2456 |   0.2654
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 2, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4314 |      0.1093 |   0.4667 |   47.4118 |   0.2627
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 3, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4297 |      0.1089 |   0.4674 |   24.8067 |   0.2631
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 3, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4291 |      0.1098 |   0.4704 |   25.9271 |   0.2657
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 3, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4321 |      0.1102 |   0.4711 |   29.7593 |   0.2641
+
+lightgcn
+LR 0.001, ITER 500, LAYERS 3, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4267 |      0.1080 |   0.4626 |   41.8624 |   0.6952
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 1, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4073 |      0.1058 |   0.4500 |   56.8939 |   0.2687
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 1, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4024 |      0.1036 |   0.4400 |   65.2934 |   0.2671
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 1, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.3942 |      0.1036 |   0.4400 |  106.7870 |   0.3083
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 1, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.3739 |      0.0996 |   0.4215 |  150.0102 |   0.2609
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 2, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4321 |      0.1098 |   0.4689 |   86.0537 |   0.2612
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 2, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4261 |      0.1089 |   0.4644 |  123.0069 |   0.2613
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 2, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4265 |      0.1093 |   0.4667 |  195.5420 |   1.2256
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 2, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4096 |      0.1044 |   0.4444 |  207.0863 |   0.6048
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 3, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4271 |      0.1098 |   0.4689 |   86.2500 |   0.3749
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 3, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4262 |      0.1107 |   0.4733 |  105.5157 |   0.4136
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 3, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4265 |      0.1093 |   0.4678 |  129.0989 |   0.2751
+
+lightgcn
+LR 0.0001, ITER 500, LAYERS 3, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4166 |      0.1071 |   0.4578 |  124.8010 |   0.2635
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 1, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4329 |      0.1076 |   0.4589 |   20.7833 |   0.5741
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 1, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4301 |      0.1062 |   0.4533 |   28.9806 |   0.5767
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 1, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4290 |      0.1071 |   0.4567 |   32.5773 |   0.2715
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 1, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4299 |      0.1084 |   0.4644 |   47.7081 |   0.2857
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 2, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4382 |      0.1089 |   0.4670 |   22.8205 |   0.2784
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 2, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4391 |      0.1080 |   0.4626 |   35.1321 |   0.3685
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 2, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4388 |      0.1102 |   0.4722 |   47.1991 |   0.4254
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 2, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4293 |      0.1098 |   0.4700 |   28.8148 |   0.4122
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 3, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4377 |      0.1093 |   0.4693 |   25.5957 |   0.3671
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 3, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4354 |      0.1076 |   0.4615 |   26.0155 |   0.5665
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 3, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4353 |      0.1084 |   0.4644 |   39.3989 |   0.2841
+
+lightgcn
+LR 0.01, ITER 300, LAYERS 3, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4363 |      0.1089 |   0.4670 |   29.3480 |   0.3418
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 1, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4326 |      0.1084 |   0.4648 |   32.2668 |   0.2651
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 1, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4366 |      0.1093 |   0.4678 |   59.9371 |   0.3169
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 1, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4253 |      0.1080 |   0.4622 |   68.8516 |   0.5316
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 1, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4110 |      0.1067 |   0.4556 |   70.0046 |   0.2936
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 2, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4375 |      0.1098 |   0.4715 |   33.8151 |   0.5933
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 2, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4330 |      0.1093 |   0.4681 |   52.9012 |   0.3679
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 2, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4343 |      0.1098 |   0.4715 |   65.6577 |   0.3663
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 2, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4296 |      0.1107 |   0.4733 |   72.5093 |   0.2839
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 3, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4275 |      0.1084 |   0.4648 |   33.4274 |   0.4026
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 3, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4336 |      0.1089 |   0.4685 |   46.8532 |   0.6347
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 3, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4351 |      0.1093 |   0.4693 |   49.6563 |   0.3429
+
+lightgcn
+LR 0.001, ITER 300, LAYERS 3, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4252 |      0.1102 |   0.4715 |   65.2373 |   0.3609
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 1, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4088 |      0.1067 |   0.4544 |   79.5149 |   0.6997
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 1, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.3947 |      0.1031 |   0.4367 |  119.4755 |   0.8084
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 1, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.3726 |      0.0996 |   0.4189 |  133.8068 |   0.4966
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 1, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.2992 |      0.0809 |   0.3494 |  127.0663 |   0.3181
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 2, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4334 |      0.1111 |   0.4756 |  139.1552 |   1.0498
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 2, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4314 |      0.1107 |   0.4733 |  118.6556 |   0.3423
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 2, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4215 |      0.1080 |   0.4600 |  114.3020 |   0.2676
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 2, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4007 |      0.1036 |   0.4400 |  125.7373 |   0.7522
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 3, BATCH 512
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4266 |      0.1093 |   0.4678 |   65.4404 |   0.5177
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 3, BATCH 1024
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4330 |      0.1098 |   0.4689 |  123.3208 |   0.2481
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 3, BATCH 2048
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4189 |      0.1076 |   0.4578 |   76.9271 |   0.2671
+
+lightgcn
+LR 0.0001, ITER 300, LAYERS 3, BATCH 4096
+lightgcn: 
+         | NDCG@5 | Precision@5 | Recall@5 | Train (s) | Test (s)
+-------- + ------ + ----------- + -------- + --------- + --------
+LightGCN | 0.4109 |      0.1044 |   0.4444 |   66.3756 |   0.2687
+
