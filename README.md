@@ -21,7 +21,7 @@ To reporduce each method described in the paper, follow the instructions below e
 ### Docker container
 To run HVGAE and BASE methods, you can rely on docker image. Specifically:
 
-First create the docker image with the following command:
+First, place inside `docker` folder and create the docker image with the following command:
 ```
 docker build -t repro_img:latest . 
 ```
