@@ -18,6 +18,20 @@ To install all the dependencies, create a new environment and, from the main fol
 
 To reporduce each method described in the paper, follow the instructions below each method in this readme.
 
+### Docker container
+To run HVGAE and BASE methods, you can rely on docker image. Specifically:
+
+First create the docker image with the following command:
+```
+docker build -t repro_img:latest . 
+```
+
+Then, create and run the container
+```
+docker run --rm -ti --gpus '"device=0"' --ipc=host --name repro_cont -v /data/path/to/dataset_recomm_repro/:/code/ ds_image_latest:latest python3 BASE/lightgcn_bpr_toppop.py -dataset=pubmed_kcore
+```
+The possible datasets are: `mes`, `pubmed`, `pubmed_kcore`.
+
 #### Project structure
 The repository is organized as follows:
 - ```BASE``` contains the baselines for: lightgcn, bpr and toppop, cosine-based ranking and bm25
@@ -98,8 +112,6 @@ To run HVGAE reproducing the component analysis on the bipartite network:
 ```python hvgae/main_bip.py --path=path/to/data/folder```
 
 These files already run on the standard, reduced, enriched setups.
-
-
 
 
 ### Base Recommendation
